@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import Image from "next/image"
 import { User, Heart, ShoppingCart, Menu, X } from 'lucide-react'
+import {Footer } from '../components/Footer'
+import HamburgerMenu from '../components/HamburgerMenu'
 
 export default function Page() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -14,7 +16,7 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-  
+      <HamburgerMenu />
       {/* Main Content */}
       <main className="bg-[#F5F5F5]">
         <div className="container mx-auto px-4 py-8 md:py-12 lg:px-[200px]">
@@ -146,7 +148,9 @@ export default function Page() {
             </div>
           </section>
         </div>
+        <Footer/>
       </main>
+      
     </div>
   )
 }

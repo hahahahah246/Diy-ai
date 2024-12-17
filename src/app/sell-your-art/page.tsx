@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Heart, ShoppingCart, User } from 'lucide-react'
 import HamburgerMenu from '../components/HamburgerMenu'
+import { Footer } from "../components/Footer"
 
 export default function SellYourArt() {
   return (
@@ -9,7 +10,7 @@ export default function SellYourArt() {
    <HamburgerMenu />
       <main className="h-full">
         {/* Hero Section */}
-        <section className="relative h-[300px] sm:h-[400px] md:h-[500px] mb-8 sm:mb-16">
+        <section className="relative h-[300px] sm:h-[400px] md:h-[500px] sm:mb-4 z-[1]">
           <Image
             src="https://i.ibb.co/DL863Nx/Sell-your-art-banner.jpg"
             alt="Background image"
@@ -107,6 +108,7 @@ export default function SellYourArt() {
             </div>
           </div>
         </div>
+        <Footer/>
       </main>
     </div>
   )
