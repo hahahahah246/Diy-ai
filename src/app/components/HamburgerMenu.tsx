@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Heart, ShoppingCart, User, Menu, X } from 'lucide-react'
-
+import { ClerkProvider, SignedOut, SignInButton, UserButton, SignedIn, } from "@clerk/nextjs";
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -31,8 +31,16 @@ const HamburgerMenu = () => {
             </Link>
           </nav>
     </div>
-      <div className="hidden md:flex items-center space-x-4 z-2">
-        <User className="w-5 h-5 fill-black" />
+      <div className="hidden md:flex items-center space-x-4 z-100">
+      <button className='z-100'>
+      <SignedOut>
+          <SignInButton/>
+          </SignedOut>
+          <SignedIn>
+            
+            <UserButton />
+          </SignedIn>
+          </button>
         <Heart className="w-5 h-5 fill-black" />
         <ShoppingCart className="w-5 h-5 fill-black" />
       </div>
@@ -51,8 +59,14 @@ const HamburgerMenu = () => {
               Shop
             </Link>
             <div className="flex items-center space-x-4 pt-4 border-t">
-              <User className="w-5 h-5 fill-black" />
-              <Heart className="w-5 h-5 fill-black" />
+            <SignedOut>
+          <SignInButton/>
+          </SignedOut>
+          <SignedIn>
+            
+            <UserButton />
+          </SignedIn>
+             <Heart className="w-5 h-5 fill-black" />
               <ShoppingCart className="w-5 h-5 fill-black" />
             </div>
           </nav>
